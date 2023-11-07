@@ -37,6 +37,7 @@ public class SwitchExpression {
         // Pattern matching in switch expression
         Object obj = 20;
         switch (obj) {
+            case null -> System.out.println("oops- value not set");
             case Integer i -> System.out.println(i + " - an integer");
             case String s -> System.out.println(s + " - a String");
             default -> System.out.println("unknown");

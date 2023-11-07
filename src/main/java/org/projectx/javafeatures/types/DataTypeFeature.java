@@ -27,5 +27,10 @@ public class DataTypeFeature {
                 </html>
                 """;
         System.out.println(html);
+
+        //Java 21
+        System.out.println(new StringBuilder()
+                .append("String builder repeat feature: ")
+                .repeat("123", 5));
     }
 }
