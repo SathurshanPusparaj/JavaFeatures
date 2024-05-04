@@ -2,6 +2,15 @@ package org.projectx.javafeatures.collections;
 
 import java.util.*;
 
+/**
+ * one to one function
+ * Stream<T>.map(f11) => Stream<R>
+ *
+ *one to many function
+ *Stream<T>.map(f1n) => Stream<List<R>>
+ *
+ *Stream<T>.flatMap(f1n) => Stream<R>
+ */
 public class CollectionFeature {
     public static void main(String[] args) {
         // JAVA 9

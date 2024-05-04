@@ -46,7 +46,7 @@ public class SwitchExpression {
         //Switch expression for sealed classes
         SealedClassFeature.Shape shape = new SealedClassFeature.Circle();
         switch (shape) {
-            case SealedClassFeature.Circle c -> System.out.println("circle");
+            case SealedClassFeature.Circle c when c.isValid() -> System.out.println("circle");
             case SealedClassFeature.Rectangle r -> System.out.println("rectangle");
             default -> throw new IllegalStateException("Unexpected value: " + shape);
         }

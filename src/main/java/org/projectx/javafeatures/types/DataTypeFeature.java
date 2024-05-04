@@ -1,9 +1,12 @@
 package org.projectx.javafeatures.types;
 
+import java.io.IOException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 public class DataTypeFeature {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //Java 10
         //Type inference
@@ -32,5 +35,18 @@ public class DataTypeFeature {
         System.out.println(new StringBuilder()
                 .append("String builder repeat feature: ")
                 .repeat("123", 5));
+
+        try (ExecutorService ex = Executors.newCachedThreadPool()) {
+            System.out.println("executor service, fork join pool, httpclient is auto closable");
+        }
+
+        char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+        int charLength = chars.length;
+        for (int i = 0, j = charLength - 1; j > 0; i++, j--) {
+            int r = (i * j + chars[i] + chars[j]) % charLength;
+            char temp = chars[i];
+            chars[i] = chars[r];
+            chars[r] = temp;
+        }
     }
 }
